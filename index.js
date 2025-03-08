@@ -50,10 +50,12 @@ class Numbers {
 
   greaterThan(target) {
     //return the numbers greater than the target
+    return this.data.filter(number => number > target);
   }
 
   howMany(target) {
     //return the count of a given number
+    return this.data.filter(number => number === target);
   }
 }
 
@@ -62,13 +64,19 @@ const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
 
 //create an instance of numbers
 const n1 = new Numbers(str);
+console.log(`Count:`)
 console.log(n1.count()); //returns count of numbers
+console.log(`Print:`)
 n1.printNumbers(); //prints the number along with their indexes
 console.log(`Odds:`)
 console.log(n1.odds()); //returns odd numbers
 console.log(`Evens:`)
 console.log(n1.evens()); //returns even numbers
+console.log(`Sum:`)
 console.log(n1.sum()); //returns sum of numbers
+console.log(`Product:`)
 console.log(n1.product()); //returns product of numbers
+console.log(`Greater than a target number:`)
 console.log(n1.greaterThan(3)); //returns numbers greater than another number
+console.log(`How Many of a target number?`)
 console.log(n1.howMany(3)); //return the count of a specific number
