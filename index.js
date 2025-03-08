@@ -33,15 +33,25 @@ class Numbers {
     return this.data.filter(number => number % 2 === 0);
   }
 
-  sum() {
+  sum(n1) {
     //return the sum of the numbers
-  }
+    let sum = 0
+    for (let i = 0; i < this.data.length; i++) {
+      sum += this.data[i];
+    } 
+    return sum;
+   }
+  
+
   product() {
     //return the product of the numbers
+    return this.data.reduce((product, number) => product * number, 1);
   }
+
   greaterThan(target) {
     //return the numbers greater than the target
   }
+
   howMany(target) {
     //return the count of a given number
   }
