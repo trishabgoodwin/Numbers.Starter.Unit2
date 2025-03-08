@@ -2,6 +2,7 @@
 // the constructor has already been provided
 class Numbers {
   constructor(data) {
+    this.data = data;
     //data can either be a string or an array of numbers
     if (typeof data === "string") {
       this.data = str.split(",").map((number) => number * 1);
@@ -9,18 +10,29 @@ class Numbers {
       this.data = data;
     }
   }
-  count() {
-    //return the count of numbers in data
+
+  count(data) {
+    return this.data.length;
   }
+
   printNumbers() {
     //print the numbers in data
+    console.log(this.data);
+    for(const num of this.data){
+      console.log(num)
+    }
   }
+
   odds() {
     //return the odd numbers in data
+    return this.data.filter(number => number % 2 !== 0);
   }
+
   evens() {
     //return the even numbers in data
+    return this.data.filter(number => number % 2 === 0);
   }
+
   sum() {
     //return the sum of the numbers
   }
@@ -42,7 +54,9 @@ const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
 const n1 = new Numbers(str);
 console.log(n1.count()); //returns count of numbers
 n1.printNumbers(); //prints the number along with their indexes
+console.log(`Odds:`)
 console.log(n1.odds()); //returns odd numbers
+console.log(`Evens:`)
 console.log(n1.evens()); //returns even numbers
 console.log(n1.sum()); //returns sum of numbers
 console.log(n1.product()); //returns product of numbers
